@@ -9,7 +9,6 @@ function Home() {
             <h1>Hi I'm Dony 👋</h1>
             <p>I'm a full-stack engineer who raps and codes.</p>
             <Link to="/about"> Learn more about me </Link>
-
         </div>
     );
 }

@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* 默认亮色模式 */
+body {
+  background-color: #ffffff;
+  color: #121212;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🌙 暗黑模式 */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+/* 你可以根据需要添加其他组件的暗黑样式，比如导航栏 */
+.navbar {
+  background-color: #2c2f36;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.dark-mode .navbar {
+  background-color: #000000;
+}
+
+/* 导航链接样式 */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+body.dark-mode .nav-links a {
+  color: #f5f5f5;
+}
+
+/* 亮/暗按钮样式 */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  color: inherit;
+  cursor: pointer;
+  font-weight: bold;
+}
+
