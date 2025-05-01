@@ -1,0 +1,19 @@
+.avatar {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 2rem auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .avatar:hover {
+    transform: scale(1.05);
+  }
+
+  .home-container {
+    text-align: center;
+    padding: 2rem;
+  }
