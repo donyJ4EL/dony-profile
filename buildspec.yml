@@ -9,9 +9,8 @@ phases:
   build:
     commands:
       - npm run build
+
 artifacts:
   files:
-    - '**/*'
-    - appspec.yml
-    - scripts/**/*
-  base-directory: build
+    - '**/*'                        # 打包所有文件
+  base-directory: .                # 👈 改成根目录
