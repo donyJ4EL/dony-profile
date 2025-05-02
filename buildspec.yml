@@ -12,5 +12,5 @@ phases:
 
 artifacts:
   files:
-    - '**/*'                        # 打包所有文件
-  base-directory: .                # 👈 改成根目录
+    - '**/*'
+  base-directory: .

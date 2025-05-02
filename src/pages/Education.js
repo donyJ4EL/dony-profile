@@ -1,5 +1,6 @@
 import React from "react";
-import EducationItem from "../components/EducationItem";
+import "../Education.css";
+import EducationCard from "../components/EducationCard";
 
 // 包含页面标题和列表数据
 // 定义可复用的展示组件
@@ -8,28 +9,26 @@ const educationList = [
     {
         school: "Nanjing University",
         degree: "Master of Software Engineering",
-        year: "2019 - 2021",
+        time: "2019 - 2021",
     },
     {
       school: "Jilin University",
       degree: "Bachelor of Software Engineering",
-      year: "2015 - 2019",
+      time: "2015 - 2019",
     },
-    
 ];
 
-function About() {
+function Education() {
     return (
-        <div style={{ padding : "2rem" }}>
-            <h1>About me</h1>
+        <div className="education-container">
             <h2>🎓 Education Background</h2>
             {
                 educationList.map(
                     (item) => (
-                        <EducationItem
+                        <EducationCard
                         school = {item.school}
                         degree = {item.degree}
-                        year = {item.year}
+                        time = {item.time}
                         />
                     )
                 )
@@ -38,4 +37,4 @@ function About() {
     );
 }
 
-export default About;
+export default Education;

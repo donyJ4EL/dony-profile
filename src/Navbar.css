@@ -34,3 +34,8 @@
   transform: scale(1.1);
   color: #1da1f2; /* Hover color */
 }
+
+.active-tab {
+  border-bottom: 2px solid #facc15; /* Amber-400 */
+  font-weight: bold;
+}

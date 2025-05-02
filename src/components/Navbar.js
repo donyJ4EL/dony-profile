@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import '../Navbar.css';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 
@@ -22,10 +22,10 @@ function Navbar() {
 
                 {/* Navigation Links */}
                 <ul className='nav-links'>
-                    <li> <Link to="/"> Home </Link> </li>
-                    <li> <Link to="/about"> About </Link> </li>
-                    <li> <Link to="/experience"> Experience </Link> </li>
-                    <li> <Link to="/music"> Music </Link> </li>
+                    <NavLink to="/" className={({ isActive }) => isActive ? 'active-tab' : ''}>Home</NavLink>
+                    <NavLink to="/education" className={({ isActive }) => isActive ? 'active-tab' : ''}>Education</NavLink>
+                    <NavLink to="/experience" className={({ isActive }) => isActive ? 'active-tab' : ''}>Experience</NavLink>
+                    <NavLink to="/music" className={({ isActive }) => isActive ? 'active-tab' : ''}>Music</NavLink>
                 </ul>
                 {/* Social Links */}
                 <div className="social-links">
