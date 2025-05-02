@@ -1,0 +1,26 @@
+.music-container {
+    padding: 2rem;
+    color: var(--text-color);
+  }
+  
+  .music-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .music-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+  }
+  
+  .music-card h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .music-audio {
+    margin-top: 1rem;
+    width: 100%;
+  }
