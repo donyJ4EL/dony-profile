@@ -2,16 +2,22 @@ import React from "react";
 
 const musicList = [
   {
-    name: "书房Freestyle",
-    description: "My first rap song",
-    audioUrl: "/music/my-first-rap.mp3",
+    name: "Studio Freestyle",
+    description: "Freestyle in my studio",
+    audioUrl: "/music/freestyle.mp3",
     cover: "/img/cover1.jpg",
+  },
+  {
+    name: "Sunset",
+    description: "Sunset time",
+    audioUrl: "/music/shine-DEMO.mp3",
+    cover: "/img/cover2.jpg",
   },
   {
     name: "Fall in fall",
     description: "Melody rap",
-    audioUrl: "/music/time-gap.mp3",
-    cover: "/img/cover2.jpg",
+    audioUrl: "/music/Fall In Fall.mp3",
+    cover: "/img/cover3.jpg",
   },
 ];
 
