@@ -3,22 +3,24 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import '../Navbar.css';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import useLocalStorage from '../hooks/UseLocalStorage';
-
+import useUserPreferences from '../hooks/UseUserPreferences';
 
 function Navbar() {
     // 🌗 State for dark mode toggle
-    const[theme, setTheme] = useLocalStorage('theme', 'light');
-    console.log(`cur theme = ${theme}`);
-
-    useEffect(() => {
-        document.body.classList.toggle('dark-mode', theme === 'dark');
-    }, [theme]);
+    const { preferences, setPreference } = useUserPreferences();
 
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
+        const next = preferences.theme === 'light' ? 'dark' : 'light';
+        setPreference('theme', next);
     };
+
+    const cycleFontSize = () => {
+        const sizes = ['small', 'medium', 'large'];
+        const i = sizes.indexOf(preferences.fontSize);
+        const nextSize = sizes[(i + 1) % sizes.length];
+        setPreference('fontSize', nextSize);
+    };
+
     return (
         <div>
             <nav className='navbar'>
@@ -39,9 +41,14 @@ function Navbar() {
                     <a href="https://wa.me/your-whatsapp-number" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
                 </div>
 
-                <button className="theme-toggle" onClick={toggleTheme}>
-                    {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
-                </button>
+                <div className="preference-controls">
+                    <button className="pref-btn" onClick={toggleTheme}>
+                        {preferences.theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
+                    </button>
+                    <button className="pref-btn" onClick={cycleFontSize}>
+                        🔤 Font: {preferences.fontSize}
+                    </button>
+                </div>
             </nav>
         </div>
     );

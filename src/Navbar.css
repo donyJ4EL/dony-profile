@@ -39,3 +39,34 @@
   border-bottom: 2px solid #facc15; /* Amber-400 */
   font-weight: bold;
 }
+
+.preference-controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.pref-btn {
+  background-color: #2d2d2d;
+  color: #facc15;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pref-btn:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .pref-btn {
+  background-color: #444;
+  color: #facc15;
+  border-color: #666;
+}
+
+body.dark-mode .pref-btn:hover {
+  background-color: #555;
+}
