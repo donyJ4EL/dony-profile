@@ -56,24 +56,20 @@ function Experience() {
     const randomizedIcons = useMemo(() => shuffle(iconList), []);
 
     return (
-        <div>
-            {/* <h1> 💼 Experience  </h1> */}
-            {
-                experienceList.map(
-                (item, index) => (
-                    <ExperienceCard
-                        title = {item.title}
-                        company = {item.company}
-                        time = {item.time}
-                        description = {item.description}
-                        icon= {randomizedIcons[index]}
-                    />
-                )
-
-                )
-            }
-
-        </div>
+      <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-slate-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12 px-4">
+        <h1 className="text-3xl font-bold mb-6 text-center dark:text-white">💼 Work Experience</h1>
+        {experienceList.map((item, index) => (
+          <ExperienceCard
+            key={index}
+            title={item.title}
+            company={item.company}
+            time={item.time}
+            description={item.description}
+            icon={randomizedIcons[index]}
+          />
+        ))}
+      </div>
+    
     );
 }
 

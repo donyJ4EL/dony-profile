@@ -1,59 +1,63 @@
 import React from "react";
-import "../Music.css";
 
 const musicList = [
-    {
-      name: "书房Freestyle",
-      description: "My first rap song",
-      audioUrl: "/music/my-first-rap.mp3"
-      
-    },
-    {
-      name: "Fall in fall",
-      description: "Melody rap",
-      audioUrl: "/music/time-gap.mp3",
-    },
-    {
-      name: "Not like us remix",
-      description: "Just for fun",
-      audioUrl: "/music/time-gap.mp3",
-      videoUrl: "https://www.youtube.com/embed/boyKJjHt4uk?si=qeGLtPJLS7WR5f0o",
-    }
-  ];
+  {
+    name: "书房Freestyle",
+    description: "My first rap song",
+    audioUrl: "/music/my-first-rap.mp3",
+    cover: "/img/cover1.jpg",
+  },
+  {
+    name: "Fall in fall",
+    description: "Melody rap",
+    audioUrl: "/music/time-gap.mp3",
+    cover: "/img/cover2.jpg",
+  },
+];
 
 function Music() {
-    return (
-        <div className="music-container">
-            <h1 className="music-title">🎵 My Music</h1>
-            {
-                musicList.map(
-                    (item) => (
-                        <div className="music-card">
-                            <h2>{item.name}</h2>
-                            <p>{item.description}</p>
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-100 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-500">
+      <div className="max-w-3xl mx-auto px-4 py-16 text-gray-800 dark:text-gray-100">
+        <h1 className="text-3xl font-bold text-center mb-10">🎵 My Music</h1>
 
-                            {item.audioUrl && (
-                                <audio controls src={item.audioUrl} className="music-audio" />
-                            )}
+        {musicList.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl p-4 mb-8 transition-shadow duration-300"
+          >
+            {item.cover && (
+              <img
+                src={item.cover}
+                alt={`${item.name} cover`}
+                className="w-full h-56 object-cover rounded-lg mb-4 shadow-sm"
+              />
+            )}
 
-                            {item.videoUrl && (
-                                <iframe
-                                    width="560"
-                                    height="315"
-                                    src={item.videoUrl}
-                                    title={item.name}
-                                    frameBorder="0"
-                                    allow="autoplay; encrypted-media"
-                                    allowFullScreen
-                                ></iframe>
-                            )}
-                        </div>
-                        
-                    )
-                )
-            }
-        </div>
-    );
+            <h2 className="text-lg font-semibold">{item.name}</h2>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{item.description}</p>
+
+            {item.audioUrl && (
+              <audio controls src={item.audioUrl} className="w-full mt-4 rounded" />
+            )}
+
+            {item.videoUrl && (
+              <div className="mt-6 aspect-video">
+                <iframe
+                  className="w-full h-full rounded-lg"
+                  src={item.videoUrl}
+                  title={item.name}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Music;

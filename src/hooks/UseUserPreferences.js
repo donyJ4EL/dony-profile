@@ -7,27 +7,32 @@ function useUserPreferences() {
     const [fontSize, setFontSize] = useLocalStorage('fontSize', 'medium');
 
     useEffect(() => {
-        document.body.classList.toggle('dark-mode', theme === 'dark');
+      const html = document.documentElement;
+      if (theme === 'dark') {
+        html.classList.add('dark');
+      } else {
+        html.classList.remove('dark');
+      }
     }, [theme]);
 
     useEffect(() => {
-        document.body.setAttribute('data-font-size', fontSize);
+      document.documentElement.setAttribute('data-font-size', fontSize);
     }, [fontSize]);
 
     useStorageListener('theme', setTheme);
     useStorageListener('fontSize', setFontSize);
 
     const setPreference = (key, value) => {
-        switch (key) {
-          case 'theme':
-            setTheme(value);
-            break;
-          case 'fontSize':
-            setFontSize(value);
-            break;
-          default:
-            console.warn(`Unknown preference key: ${key}`);
-        }
+      switch (key) {
+        case 'theme':
+          setTheme(value);
+          break;
+        case 'fontSize':
+          setFontSize(value);
+          break;
+        default:
+          console.warn(`Unknown preference key: ${key}`);
+      }
     };
 
     return {

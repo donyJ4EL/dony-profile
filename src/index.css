@@ -1,104 +1,14 @@
-/* ===== 全局基础设置 ===== */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
-  background-color: #ffffff;
-  color: #1a1a1a;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* ===== 暗黑模式下切换 ===== */
-body.dark-mode {
-  background-color: #121212;
-  color: #eeeeee;
-}
-
-/* ===== 字体大小支持 ===== */
-body[data-font-size="small"] {
+/* ✅ 保留字体大小控制用的 data-attribute */
+html[data-font-size='small'] {
   font-size: 14px;
 }
-
-body[data-font-size="medium"] {
+html[data-font-size='medium'] {
   font-size: 16px;
 }
-
-body[data-font-size="large"] {
+html[data-font-size='large'] {
   font-size: 18px;
-}
-
-/* ===== 导航栏样式 ===== */
-.navbar {
-  background-color: #1f1f1f;
-  color: white;
-  padding: 0.8rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 500;
-}
-
-.navbar .nav-links a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #ccc;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 4px;
-  transition: all 0.2s ease;
-}
-
-.navbar .nav-links a:hover,
-.navbar .nav-links .active-tab {
-  color: #ffffff;
-  border-color: #facc15; /* 高对比黄色下划线 */
-}
-
-/* ===== 按钮样式（统一圆角风格） ===== */
-button.theme-toggle,
-button.font-toggle {
-  margin-left: 1rem;
-  padding: 0.4rem 0.8rem;
-  background-color: #2d2d2d;
-  color: #facc15;
-  border: 1px solid #444;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button.theme-toggle:hover,
-button.font-toggle:hover {
-  background-color: #3a3a3a;
-}
-
-/* ===== 卡片统一风格（如 experience、education） ===== */
-.exp-card, .edu-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  padding: 1.2rem 1.6rem;
-  margin: 1.2rem 0;
-  transition: all 0.3s ease;
-}
-
-body.dark-mode .exp-card,
-body.dark-mode .edu-card {
-  background-color: #1e1e1e;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.05);
-}
-
-/* ===== 图片圆角 ===== */
-.avatar {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: block;
-  margin: 2rem auto;
-  transition: transform 0.3s ease;
-}
-
-.avatar:hover {
-  transform: scale(1.05);
 }
