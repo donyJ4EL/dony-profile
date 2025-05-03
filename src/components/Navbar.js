@@ -1,18 +1,23 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'
 import '../Navbar.css';
 import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
+import useLocalStorage from '../hooks/UseLocalStorage';
 
 
 function Navbar() {
     // 🌗 State for dark mode toggle
-    const [isDark, setIsDark] = useState(false);
+    const[theme, setTheme] = useLocalStorage('theme', 'light');
+    console.log(`cur theme = ${theme}`);
 
-    // 切换暗黑模式
+    useEffect(() => {
+        document.body.classList.toggle('dark-mode', theme === 'dark');
+    }, [theme]);
+
     const toggleTheme = () => {
-        document.body.classList.toggle('dark-mode');
-        setIsDark(!isDark);
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        setTheme(newTheme);
     };
     return (
         <div>
@@ -35,7 +40,7 @@ function Navbar() {
                 </div>
 
                 <button className="theme-toggle" onClick={toggleTheme}>
-                    {isDark ? '🌞 Light' : '🌙 Dark'}
+                    {theme === 'dark' ? '🌞 Light' : '🌙 Dark'}
                 </button>
             </nav>
         </div>
