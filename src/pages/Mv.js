@@ -3,7 +3,7 @@ import React from "react";
 const mvList = [
   {
     name: "<<Not Like Us>> Remix",
-    description: "Just for fun",
+    description: "Just for fun (Shout out to Porridge)",
     videoUrl: "https://www.youtube.com/embed/boyKJjHt4uk?si=qeGLtPJLS7WR5f0o",
   },
 ];
