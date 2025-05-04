@@ -5,7 +5,7 @@ const musicList = [
     name: "Studio Freestyle",
     description: "Freestyle in my studio",
     audioUrl: "/music/freestyle.mp3",
-    cover: "/img/music1.jpg",
+    cover: "/img/music1.png",
   },
   {
     name: "Sunset",
