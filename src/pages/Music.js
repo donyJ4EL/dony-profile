@@ -5,7 +5,7 @@ const musicList = [
     name: "Studio Freestyle",
     description: "Freestyle in my studio",
     audioUrl: "/music/freestyle.mp3",
-    cover: "/img/cover1.jpg",
+    cover: "/img/music1.jpg",
   },
   {
     name: "Sunset",
@@ -36,7 +36,7 @@ function Music() {
               <img
                 src={item.cover}
                 alt={`${item.name} cover`}
-                className="w-full h-56 object-cover rounded-lg mb-4 shadow-sm"
+                className="w-full h-full object-cover rounded-lg mb-4 shadow-sm hover:-translate-y-1er"
               />
             )}
 
